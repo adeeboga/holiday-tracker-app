@@ -1,7 +1,7 @@
 <section class="forms-section">
 
     <div class="forms">
-      <div class="form-wrapper is-active">
+      <div class="form-wrapper is-active"  (submit)="loginUser($event)">
       <button type="button" class="switcher switcher-login">
           Login
           <span class="underline"></span>
@@ -18,7 +18,7 @@
               <input id="login-password" type="password" required>
             </div>
           </fieldset>
-          <a routerLink="/home"><button type="submit" class="btn-login">Login</button></a>
+          <a routerLink="/home"> <button type="submit" class="btn-login">Login</button></a>
         </form>
       </div>
       <div class="form-wrapper">

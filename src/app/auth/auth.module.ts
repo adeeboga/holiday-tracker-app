@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 
 
+
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
   imports: [
@@ -22,7 +23,8 @@ import { RouterModule } from '@angular/router';
       {
         path: '',
         component: LoginComponent
-      },
+      }
+     
 
     ])
   ]
