@@ -26,20 +26,20 @@
           Sign Up
           <span class="underline"></span>
         </button>
-        <form class="form form-signup">
+        <form class="form form-signup"  (submit)="registerUser($event)" >
           <fieldset>
             <legend>Please, enter your email, password and password confirmation for sign up.</legend>
             <div class="input-block">
-                <label for="signup-nume">Nume</label>
-                <input id="signup-nume" type="nume" required>
+                <label for="signup-name">Name</label>
+                <input id="signup-name" type="name" required>
               </div>
             <div class="input-block">
               <label for="signup-email">E-mail</label>
               <input id="signup-email" type="email" required>
             </div>
             <div class="input-block">
-                <label for="signup-grupa">Grupa</label>
-                <input id="signup-grupa" type="grupa" required>
+                <label for="signup-group">Group</label>
+                <input id="signup-group" type="grupa" required>
               </div>
             <div class="input-block">
               <label for="signup-password">Password</label>
@@ -50,7 +50,7 @@
               <input id="signup-password-confirm" type="password" required>
             </div>
           </fieldset>
-          <a routerLink="/login"><button type="submit" class="btn-signup">Continue</button></a>
+          <button type="submit" class="btn-signup">Continue</button>
         </form>
       </div>
     </div>
