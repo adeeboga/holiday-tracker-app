@@ -1,57 +1,87 @@
 <section class="forms-section">
 
-    <div class="forms">
-      <div class="form-wrapper ">
-        <a routerLink="/login"><button type="button" class="switcher switcher-login">
-          Login
-          <span class="underline"></span>
-        </button></a>
-        <form class="form form-login">
-          <fieldset>
-            <legend>Please, enter your email and password for login.</legend>
-            <div class="input-block">
-              <label for="login-email">E-mail</label>
-              <input id="login-email" type="email" required>
-            </div>
-            <div class="input-block">
-              <label for="login-password">Password</label>
-              <input id="login-password" type="password" required>
-            </div>
-          </fieldset>
-          <button type="submit" class="btn-login">Login</button>
-        </form>
-      </div>
-      <div class="form-wrapper is-active">
-        <button type="button" class="switcher switcher-signup">
-          Sign Up
-          <span class="underline"></span>
-        </button>
-        <form class="form form-signup"  (submit)="registerUser($event)" >
-          <fieldset>
-            <legend>Please, enter your email, password and password confirmation for sign up.</legend>
-            <div class="input-block">
-                <label for="signup-name">Name</label>
-                <input id="signup-name" type="name" required>
-              </div>
-            <div class="input-block">
-              <label for="signup-email">E-mail</label>
-              <input id="signup-email" type="email" required>
-            </div>
-            <div class="input-block">
-                <label for="signup-group">Group</label>
-                <input id="signup-group" type="grupa" required>
-              </div>
-            <div class="input-block">
-              <label for="signup-password">Password</label>
-              <input id="signup-password" type="password" required>
-            </div>
-            <div class="input-block">
-              <label for="signup-password-confirm">Confirm password</label>
-              <input id="signup-password-confirm" type="password" required>
-            </div>
-          </fieldset>
-          <button type="submit" class="btn-signup">Continue</button>
-        </form>
-      </div>
+  <div class="forms">
+   
+    <div class="form-wrapper is-active">
+
+      <form class="form form-signup" (submit)="registerUser($event)">
+        <fieldset>
+          <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+          <div class="input-block">
+            <label for="signup-name">Name</label>
+            <input id="signup-name" type="name" required>
+          </div>
+          <div class="input-block">
+            <label for="signup-email">E-mail</label>
+            <input id="signup-email" type="email" required>
+          </div>
+          <div class="input-block">
+            <mat-form-field appearance="fill">
+              <mat-label> </mat-label>
+              <select matNativeControl [disabled]="disableSelect.value">
+                <option value="" selected></option>
+                <option value="dev">Dev</option>
+                <option value="qa">QA</option>
+                <option value="intern">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+            </mat-form-field>
+          </div>
+          <div class="input-block">
+            <label for="signup-password">Password</label>
+            <input id="signup-password" type="password" required>
+          </div>
+          <div class="input-block">
+            <label for="signup-password-confirm">Confirm password</label>
+            <input id="signup-password-confirm" type="password" required>
+          </div>
+        </fieldset>
+        <a routerLink="/home"></a> <button type="submit" class="btn-signup">Continue</button>
+       <p class="message">or <a routerLink="/login">Login</a></p>
+
+     
+      </form>
+      
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- 
+<mat-card style="width: 28%;" >
+  <mat-card-title>Register</mat-card-title>
+<mat-card-content >
+<form [formGroup] = "form" (ngSubmit) = "register()" >
+<p>
+  <mat-form-field>
+    <input type="text" matInput placeholder="Email" formControlName="email">
+    <mat-error *ngIf="email.hasError('required')">Email is required </mat-error>
+    <mat-error *ngIf="email.hasError('minlength')">Email must have at least 3 characters </mat-error>
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field>
+    <input type="password" matInput placeholder="Password" formControlName="password">
+    <mat-error *ngIf="password.hasError('required')">Password is required </mat-error>
+    <mat-error *ngIf="password.hasError('minlength')">Password must have at least 3 characters </mat-error>
+    <mat-error *ngIf="password.hasError('isError')">Password must have at least one Big Letter and one Number  </mat-error>
+  
+  </mat-form-field>
+
+  <mat-form-field  >
+    <mat-label>Teams</mat-label>
+    <mat-select formControlName="team">
+      <mat-option *ngFor="let item of Teams | enumToString"  [value] = "item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="team.hasError('required')">Field teams is required </mat-error>
+   
+  </mat-form-field>
+<div class="button">
+  <button type="submit" mat-button  [disabled]= "form.invalid" >Register</button>
+
+  </div>
+</form>
+</mat-card-content>
+</mat-card> -->

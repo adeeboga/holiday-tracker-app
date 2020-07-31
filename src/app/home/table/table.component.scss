@@ -1,0 +1,20 @@
+@media all and (width: 500px) {
+    tr  {
+      td {
+        vertical-align: middle !important;
+       
+      }
+      span {
+        &:not([class]) {
+          padding: 3rem 3rem;
+        }
+      }
+    }
+  }
+
+  // .styleTable{
+  //   tr{
+
+  //     width: 900px
+  //   }
+  // }

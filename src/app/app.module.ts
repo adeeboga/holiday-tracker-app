@@ -4,11 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from '../app/auth/auth.module'
-import { HomeModule}  from './home/home.module'
+import { HomeModule}  from './home/home.module';
+import { DialogBoxComponent } from './home/dialog-box/dialog-box.component'
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogBoxComponent
   ],
   imports: [
     BrowserModule,

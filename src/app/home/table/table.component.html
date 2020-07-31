@@ -1,0 +1,45 @@
+
+<div>
+  <p>Hi</p>
+</div>
+
+
+<div>
+  <mat-table [dataSource]="dataSource">
+    <!-- User name Definition -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+    </ng-container>
+  
+    <!-- Email Definition -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> title </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.title}} </mat-cell>
+    </ng-container>
+  
+    <!-- Team Definition -->
+    <ng-container matColumnDef="start">
+      <mat-header-cell *matHeaderCellDef> start</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.start}} </mat-cell>
+    </ng-container>
+
+    
+    
+    <!-- action -->
+    <ng-container matColumnDef="action">
+     
+    <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="action-link"> 
+      <button (click)="openDialog('Update',element)">Edit</button> | 
+      <button (click)="openDialog('Delete',element)">Delete</button> 
+       
+    </mat-cell>
+  </ng-container>
+  
+  
+    <!-- Header and Row Declarations -->
+    <mat-header-row *matHeaderRowDef="['id', 'title', 'start']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['id', 'title', 'start']"></mat-row>
+  </mat-table>
+</div>

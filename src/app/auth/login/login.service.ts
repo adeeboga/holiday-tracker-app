@@ -1,22 +1,35 @@
 import { Injectable } from '@angular/core';
-
+import { Router } from '@angular/router'
 import { User } from './user'
+
+// userList[];
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  user = new User('Adelina', 'adeeboga@gmail.com', 'intern','parola');
+  // userList[];
+  user = new User('Adelina', 'adeeboga@gmail.com', 'intern', 'parola');
+  // user = new User('test1', 'test1', 'Test', 'parola');
 
-  constructor() { }
+  constructor(private router: Router) { }
 
 
-  public checkLogin(email : string, password : string){
-    if(this.user.email == email && this.user.password == password){
-      alert('Hi '+name);
-    }else{
-      alert("Something went wrong!!")
+  public checkUser(name: string, password: string) {
+    if (name == 'admin' && password == 'admin') {
+      this.router.navigateByUrl('/admin');
+      alert("admin");
+      console.log("admin");
+    } else {
+      if (this.user.name == name && this.user.password == password) {
+        this.router.navigateByUrl('/home');
+        console.log("Succes");
+        alert("Buna, " + name);
+      } else {
+        console.log("Failed");
+        alert("Wrong credentials");
+      }
     }
-  }
 
+  }
 }
